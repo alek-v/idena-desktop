@@ -24,7 +24,6 @@ import {
 import {IconButton2} from '../shared/components/button'
 import {IconLink} from '../shared/components/link'
 import {IdentityStatus} from '../shared/types'
-import {useChainState} from '../shared/providers/chain-context'
 import {toPercent, toLocaleDna, callRpc} from '../shared/utils/utils'
 import {Toast} from '../shared/components/components'
 import KillForm, {
@@ -37,7 +36,6 @@ import {
 import {persistItem} from '../shared/utils/persist'
 import {InviteProvider} from '../shared/providers/invite-context'
 import {rem} from '../shared/theme'
-import {getLayout} from '../screens/app/layout'
 
 export default function ProfilePage() {
   const {
@@ -58,8 +56,6 @@ export default function ProfilePage() {
   } = useDisclosure()
 
   const toast = useToast()
-
-  // const {syncing, offline} = useChainState()
 
   const {
     address,
@@ -253,5 +249,3 @@ export default function ProfilePage() {
     </InviteProvider>
   )
 }
-
-ProfilePage.getLayout = getLayout
